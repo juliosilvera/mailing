@@ -12,7 +12,7 @@ foreach ($user as $get) {
 }
 $aperturas = DB::table('correos')->where('camp', $campania)->where('check', 'si')->get();
 $abiertos = DB::table('correos')->where('camp', $campania)->where('check', 'si')->count();
-$mbox = imap_open("{rsb48.rhostbh.com:143}INBOX", $usuario, $clave);
+$mbox = imap_open("{rsb48.rhostbh.com:993/imap/ssl}INBOX", $usuario, $clave);
 $rebotes = imap_num_msg($mbox);
 imap_close($mbox);
 $suma = $rebotes + $abiertos;
