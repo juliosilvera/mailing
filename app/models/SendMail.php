@@ -22,7 +22,7 @@ class SendMail {
 	'id' => $id, 'codigo' => $codigo);
 	Mail::send('emails.welcome', $data, function($message) use ($correo, $campania, $from_email, $from_name)
 {
-	$message->from($from_email, $from_name)
+	$message->from($from_email, $from_name);
   	$message->to($correo->email, '')
           ->subject($campania);
 		});
