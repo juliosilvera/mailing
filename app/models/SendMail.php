@@ -8,8 +8,7 @@ class SendMail {
 		$campania = $camp->nombre;
 		$id = $camp->id;
 		$attach = $camp->attach;
-		$from_email = $camp->bouncing;
-		$from_name = $camp->sender;
+
 	}
 	$grupos = Input::get('grupo');
 	foreach ($grupos as $grupo) {
@@ -20,9 +19,8 @@ class SendMail {
 			$codigo = $correo->codigo;
 			$data = array(
 	'id' => $id, 'codigo' => $codigo);
-	Mail::send('emails.welcome', $data, function($message) use ($correo, $campania, $from_email, $from_name)
+	Mail::send('emails.welcome', $data, function($message) use ($correo, $campania)
 {
-	$message->from($from_email, $from_name);
   	$message->to($correo->email, '')
           ->subject($campania);
 		});
