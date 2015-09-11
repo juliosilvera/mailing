@@ -13,7 +13,7 @@ class SendMail {
 	$grupos = Input::get('grupo');
 	foreach ($grupos as $grupo) {
 		
-		$correos2 = DB::table('correos')->where('group_id', $grupo)->where('send', 'no')->count();
+		$correos2 = DB::table('correos')->where('group_id', $grupo)->count();
 		
 		$count = 1;
 		while( $count < $correos2)
