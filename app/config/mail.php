@@ -15,7 +15,7 @@ return array(
 	|
 	*/
 
-	'driver' => 'smtp',
+	'driver' => 'mail',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'facturacion.electronica@freerisk.com.ec', 'name' => 'FreeRisk'),
+	'from' => array('address' => 'confirmacionesherbalife@gmail.com', 'name' => 'Herbalife del Ecuador'),
 
 	/*
 	|--------------------------------------------------------------------------
