@@ -35,7 +35,7 @@ class SendMail {
 			            ->update(array('send' => 'si'));
 			}
 			$count += 1500;
-			$i = $id_email;
+			$i += 1500;
 		
 	}
 
