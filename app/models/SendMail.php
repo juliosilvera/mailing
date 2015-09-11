@@ -16,7 +16,7 @@ class SendMail {
 		$correos2 = DB::table('correos')->where('group_id', $grupo)->where('send', 'no')->count();
 		
 		$count = 1;
-		for($i = 0; $i < $correos2; $i++)
+		for($i = 0; $i < $correos2; $i += 1500)
 		{
 			$correos = DB::table('correos')->where('group_id', $grupo)->whereBetween('id', array($count, ($count+1500)))->where('send', 'no')->get();
 			foreach ($correos as $correo) {
@@ -35,7 +35,7 @@ class SendMail {
 			            ->update(array('send' => 'si'));
 			}
 			$count += 1500;
-			$i += 1500;
+			
 		
 	}
 
