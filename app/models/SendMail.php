@@ -3,13 +3,13 @@
 class SendMail {
 	
 	public function enviar(){
-	$camps = DB::table('campanias')->where('id', Input::get('camp'))->get();
-	foreach ($camps as $camp) {
-		$campania = $camp->nombre;
-		$id = $camp->id;
-		$attach = $camp->attach;
+	$camps = DB::table('campanias')->where('id', Input::get('camp'))->first();
+	
+		$campania = $camps->nombre;
+		$id = $camps->id;
+		$attach = $camps->attach;
 
-	}
+	
 	$grupos = Input::get('grupo');
 	foreach ($grupos as $grupo) {
 		
