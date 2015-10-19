@@ -13,7 +13,7 @@ class SendMail {
 	$grupos = Input::get('grupo');
 	foreach ($grupos as $grupo) {
 		
-		$correos = DB::table('correos')->where('group_id', $grupo)->where('send', 'no')->get();
+		$correos = DB::table('correos')->where('group_id', $grupo)->whereBetween('id', array(1, 1500))->where('send', 'no')->get();
 			foreach ($correos as $correo) {
 			$email = $correo->email;
 			$id_email = $correo->id;
