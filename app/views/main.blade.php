@@ -28,14 +28,14 @@
                 <p id="text">
                 Sistema de Mailing
                 </p>
-                <img id="image" src="img/logo.png" class="image" />
+                <img id="image" src="img/logo_white.png" class="image" />
             </div>
             <div id="content" class="clearfix">
             @yield('body')
             </div>
             <div id="footer" class="clearfix">
                 <p id="text1">
-                Todos los derechos reservados - Open Mind 2014
+                Todos los derechos reservados - &copy; GO TRADE - 2015
                 </p>
             </div>
         </div>
