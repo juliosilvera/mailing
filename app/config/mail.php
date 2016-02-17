@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'facturacion.electronica@freerisk.com.ec', 'name' => 'FreeRisk Operaciones'),
+	'from' => array('address' => 'facturacion.mailing@freerisk.com.ec', 'name' => 'FreeRisk Operaciones'),
 
 	/*
 	|--------------------------------------------------------------------------
