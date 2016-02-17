@@ -3,11 +3,12 @@
 class SendMail {
 	
 	public function enviar(){
+		
 	$camps = DB::table('campanias')->where('id', Input::get('camp'))->first();
 	
 		$campania = $camps->nombre;
 		$id = $camps->id;
-		$attach = $camps->attach;
+		$datos = array('attach' => 'files/' . $camps->attach, 'from' => $camps->bouncings);
 
 	
 	$grupos = Input::get('grupo');
@@ -20,10 +21,15 @@ class SendMail {
 			$codigo = $correo->codigo;
 			$data = array(
 				'id' => $id, 'codigo' => $codigo);
-				Mail::send('emails.welcome', $data, function($message) use ($correo, $campania)
+				Mail::send('emails.welcome', $data, function($message) use ($correo, $campania, $datos)
 				{
-			  	$message->to($correo->email, '')
-			          ->subject($campania);
+		          	$message->from($datos['from'], 'FreeRisk Operaciones');
+
+				    $message->to($correo->email);
+
+				    $message->subject($campania);
+
+				    $message->attach($pathToFile);
 				});
 				DB::table('correos')
 			            ->where('id', $id_email)
