@@ -1,6 +1,10 @@
 @extends('main')
 
 @section('body')
+<?php
+set_time_limit(0);
+ini_set('memory_limit', '-1');		
+?>
 <center>
 	<h4>Enviar Mailing</h4>
 	<h4>Grupos de Envio</h4>
