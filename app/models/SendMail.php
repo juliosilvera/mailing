@@ -8,7 +8,7 @@ class SendMail {
 	
 		$campania = $camps->nombre;
 		$id = $camps->id;
-		$datos = array('attach' => 'files/' . $camps->attach, 'from' => $camps->bouncings);
+		$datos = array('attach' => 'files/' . $camps->attach, 'from' => $camps->bouncing);
 
 	
 	$grupos = Input::get('grupo');
