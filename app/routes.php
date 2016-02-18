@@ -99,6 +99,8 @@ Route::match(array('GET', 'POST'), '{page}', array('before' => 'auth', function(
 			break;
 
 		case 'send_camp':
+			set_time_limit(0);
+			ini_set('memory_limit', '-1');
 			$send_camp = new SendMail();
 			$send_camp->enviar();
 			return Redirect::to('admin');
