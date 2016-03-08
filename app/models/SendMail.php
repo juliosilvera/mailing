@@ -29,7 +29,10 @@ class SendMail {
 
 				    $message->subject($campania);
 
-				    $message->attach($datos['attach']);
+				    if($datos['attach'] != "")
+				    {
+				    	$message->attach($datos['attach']);
+				    }
 				});
 				DB::table('correos')
 			            ->where('id', $id_email)

@@ -23,6 +23,7 @@ Route::get('/', function()
 });
 
 Route::get('images/{id}', function($id){
+	date_default_timezone_set('America/Guayaquil');
 	$codigo = Input::get('codigo');
 	$fecha = date('Y-m-d');
 	DB::table('correos')
