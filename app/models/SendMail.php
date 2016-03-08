@@ -23,7 +23,7 @@ class SendMail {
 				'id' => $id, 'codigo' => $codigo);
 				Mail::send('emails.welcome', $data, function($message) use ($correo, $campania, $datos, $camps)
 				{
-		          	$message->from($datos['from'], 'FreeRisk Operaciones');
+		          	$message->from($datos['from'], $camps->sender);
 
 				    $message->to($correo->email);
 
