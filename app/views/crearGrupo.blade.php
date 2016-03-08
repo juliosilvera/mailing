@@ -4,7 +4,8 @@
 <center>
 	<h4>Crear Grupo de Envio</h4>
 	<form action="crear_grupo" method="post">
-		<input type="text" name="grupo">
+		<input type="text" name="grupo" placeholder="Nombre Grupo">
+		
 		<input type="submit" value="Crear Grupo">
 	</form>
 	<br>
