@@ -21,7 +21,7 @@ class SendMail {
 			$codigo = $correo->codigo;
 			$data = array(
 				'id' => $id, 'codigo' => $codigo);
-				Mail::send('emails.welcome', $data, function($message) use ($correo, $campania, $datos)
+				Mail::send('emails.welcome', $data, function($message) use ($correo, $campania, $datos, $camps)
 				{
 		          	$message->from($datos['from'], 'FreeRisk Operaciones');
 
@@ -29,7 +29,7 @@ class SendMail {
 
 				    $message->subject($campania);
 
-				    if($datos['attach'] != "")
+				    if($camps->attach != "")
 				    {
 				    	$message->attach($datos['attach']);
 				    }
